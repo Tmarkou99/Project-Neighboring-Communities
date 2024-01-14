@@ -4,7 +4,16 @@ library(beepr)
 
 
 
+# Data Preperation -------------------------------------------------
 
+ shp <- st_read("C:/My_Files/University/ΠΜΣ/📑Thesis/top_dim_koinotites(ELSTAT)/TOP_DHM_KOIN.shp")  # shp data
+
+ shp_backup <- shp
+ 
+ shp <- shp %>% 
+   select(KALCODE,geometry)
+ 
+ 
 # First Degree Neighbors -------------------------------------------
 
 
@@ -127,7 +136,7 @@ glimpse(urban_koin)
 glimpse(neighbors)
 
 
-# Filter urban_koin codes
+
 urban_koin_filtered <- urban_koin %>%
   filter(KOD11 %in% neighbors$KALCODE)
 
@@ -136,13 +145,13 @@ neighbors_first <- neighbors %>%
   inner_join(urban_koin_filtered, by = c("KALCODE" = "KOD11")) %>%
   select(KALCODE, NEIGHBOR)
 
-# Second-degree neighbors for urban_koin codes
+# Second-degree
 neighbors_second <- neighbors %>%
   inner_join(neighbors_first, by = c("KALCODE" = "NEIGHBOR"), relationship =
                "many-to-many") %>%
   select(KALCODE, NEIGHBOR)
 
-# Filter only the second-degree neighbors for urban_koin
+
 urban_koin_nei <- neighbors_second %>%
   filter(KALCODE %in% urban_koin_filtered$KOD11)
 
