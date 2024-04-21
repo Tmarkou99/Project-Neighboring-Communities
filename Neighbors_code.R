@@ -17,7 +17,7 @@ library(beepr)
 
 
 # Data input --------------------------------------------------------------
-start.time <- Sys.time()
+
 
 shp <- st_read("C:/My_Files/University/ΠΜΣ/📑Thesis/top_dim_koinotites(ELSTAT)/TOP_DHM_KOIN.shp")  # shp data
 
@@ -140,6 +140,9 @@ neighboring_communities <- result_df %>%
 
 # Visualization -----------------------------------------------------------
 
+# Insert the KALCODE of the community you want to investigate
+# 18010101 refers to the KALCODE of Ioannina 
+
 community <- neighboring_communities %>% 
   filter(KALCODE == "18010101") %>% 
   select(KALCODE) %>%
@@ -180,7 +183,7 @@ ggplot() +
   geom_sf(data = best_neighbor, fill = "red") +
   geom_sf(data = community, fill = "yellow",) +
   labs(
-    title = "Spatial Analysis of Ioannina",
+    title = "Spatial Analysis of Ioannina, Hpeiros",
     fill = "Legend",
     caption = "Lightblue: Neighbor\nRed: Best Neighbor\nYellow: Ioannina\nWhite:Second Degree Neighbors"
   ) +
