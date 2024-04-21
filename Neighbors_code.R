@@ -18,8 +18,8 @@ library(beepr)
 
 # Data input --------------------------------------------------------------
 
-
-shp <- st_read("C:/My_Files/University/ΠΜΣ/📑Thesis/top_dim_koinotites(ELSTAT)/TOP_DHM_KOIN.shp")  # shp data
+#Provide the path to the data!
+load("C:/Data.RData")
 
 shp_backup <- shp # Making a backup
 
