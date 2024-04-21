@@ -8,3 +8,6 @@ The package called "sf" contains everything in order to manipulate shape files a
 
 You can find more info on the following link \
 <https://r-spatial.github.io/sf/>
+
+In our case, the KALCODE of each community is an identifier for every community that Hellenic Statistic Authority is using to refer to a certain administrative unit.
+
