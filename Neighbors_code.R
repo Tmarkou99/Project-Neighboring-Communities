@@ -21,7 +21,7 @@ library(beepr)
 
 shp <- st_read("C:/My_Files/University/ΠΜΣ/📑Thesis/top_dim_koinotites(ELSTAT)/TOP_DHM_KOIN.shp")  # shp data
 
-shp_backup <- shp
+shp_backup <- shp # Making a backup
 
 shp <- shp %>% 
   select(KALCODE,geometry)

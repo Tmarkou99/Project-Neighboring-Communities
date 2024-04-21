@@ -1,5 +1,10 @@
 # Project: Neighboring Communities
 
-This is the code for manipulating .shp files that contain the geometry of a certain object and the end result is finding the neighboring objects. In addition to that, the "best neighbor" of each object is also provided with "best neighbor" being the object that shares the most boarder length.
+This code manipulates shapefiles (.shp files) containing the geometry of specific objects to identify neighboring objects. Additionally, it determines the 'best neighbor' for each object, defined as the one sharing the most border length.
 
-To analyse some actual data the official shape file provided from the Hellenic Statistic Authority is used and more specifically the municipal communities.
+The analysis utilizes actual data sourced from the official shape file provided by the Hellenic Statistical Authority, focusing specifically on municipal communities.
+
+The package called "sf" contains everything in order to manipulate shape files and also many more functions, an sf object in R is based on the dataframe and has multiple columns with different variables, as well as a geometry column containing the spatial vector geometry.
+
+You can find more info on the following link \
+<https://r-spatial.github.io/sf/>
